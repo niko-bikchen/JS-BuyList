@@ -1,15 +1,98 @@
 <!DOCTYPE html>
-<html>
-<head lang="uk">
+<html lang="en">
+<head>
     <meta charset="UTF-8">
-    <title>My Pagio</title>
-
-
-    <link rel="stylesheet" type="text/css" href="main.css" />
+    <title>Buy list</title>
+    <link rel="stylesheet" type="text/css" href="main.css"/>
 </head>
 <body>
-<h1>Hello World</h1>
-<p>Hello Git</p>
-<div class="text2018">Hi 2018!!!</div>
+<div id="main-container">
+    <div id="products-column" class="column">
+        <div id="input-row" class="row">
+            <input id="input-field" type="text" placeholder="Назва товару">
+            <button id="add-button" class="button">Додати</button>
+        </div>
+        <div id="product-list">
+            <div class="product">
+                    <span class="prod-name">
+                        Картопля
+                    </span>
+                <span class="quantity-modifiers">
+                        <button class="button minus-button">-</button>
+                        <span class="quantity">1</span>
+                        <button class="button plus-button">+</button>
+                    </span>
+                <span class="actions">
+                            <button class="button buy-button">Куплено</button>
+                            <button class="button dismiss-button">&#10006</button>
+                    </span>
+            </div>
+            <div class="product">
+                    <span class="prod-name">
+                        Печиво
+                    </span>
+                <span class="quantity-modifiers">
+                        <button class="button minus-button">-</button>
+                        <span class="quantity">1</span>
+                        <button class="button plus-button">+</button>
+                    </span>
+                <span class="actions">
+                            <button class="button buy-button">Куплено</button>
+                            <button class=" button dismiss-button">&#10006</button>
+                    </span>
+            </div>
+            <div class="product">
+                    <span class="prod-name">
+                        Сир
+                    </span>
+                <span class="quantity-modifiers">
+                        <button class="button minus-button">-</button>
+                        <span class="quantity">1</span>
+                        <button class="button plus-button">+</button>
+                    </span>
+                <span class="actions">
+                            <button class="button buy-button">Куплено</button>
+                            <button class="button dismiss-button">&#10006</button>
+                    </span>
+            </div>
+        </div>
+    </div>
+    <div id="status-column" class="column">
+        <div id="remained" class="status-column-label">
+            <h2>Залишилося</h2>
+        </div>
+        <div id="remained-products-list" class="status-column-list">
+                <span class="product">
+                    <span class="name">
+                        Помідори
+                    </span>
+                    <span class="quantity">
+                        1
+                    </span>
+                </span>
+            <span class="product">
+                    <span class="name">
+                        Печиво
+                    </span>
+                    <span class="quantity">
+                        1
+                    </span>
+                </span>
+            <span class="product">
+                    <span class="name">
+                        Сир
+                    </span>
+                    <span class="quantity">
+                        1
+                    </span>
+                </span>
+        </div>
+        <div id="bought" class="status-column-label">
+            <h2>Куплено</h2>
+        </div>
+        <div class="bought-list">
+        </div>
+    </div>
+</div>
 </body>
 </html>
