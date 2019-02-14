@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ua">
 <head>
     <meta charset="UTF-8">
     <title>Buy list</title>
@@ -10,7 +10,7 @@
     <div id="products-column" class="column">
         <div id="input-row" class="row">
             <input id="input-field" type="text" placeholder="Назва товару">
-            <button id="add-button" class="button">Додати</button>
+            <button id="add-button" class="button" data-tooltip="Додати продукт з даною назвою">Додати</button>
         </div>
         <div id="product-list">
             <div class="product">
@@ -18,13 +18,13 @@
                         Помідори
                     </span>
                 <span class="quantity-modifiers">
-                        <button class="button minus-button">-</button>
+                        <button class="button minus-button" data-tooltip="Зменшити к-сть">-</button>
                         <span class="quantity">1</span>
-                        <button class="button plus-button">+</button>
+                        <button class="button plus-button" data-tooltip="Збільшити к-сть">+</button>
                     </span>
                 <span class="actions">
-                            <button class="button buy-button">Куплено</button>
-                            <button class="button dismiss-button">&#10006</button>
+                            <button class="button buy-button" data-tooltip="Відмітити як куплений">Куплено</button>
+                            <button class="button dismiss-button" data-tooltip="Скасувати">&#10006</button>
                     </span>
             </div>
             <div class="product">
@@ -32,13 +32,13 @@
                         Печиво
                     </span>
                 <span class="quantity-modifiers">
-                        <button class="button minus-button">-</button>
+                        <button class="button minus-button" data-tooltip="Зменшити к-сть">-</button>
                         <span class="quantity">1</span>
-                        <button class="button plus-button">+</button>
+                        <button class="button plus-button" data-tooltip="Збільшити к-сть">+</button>
                     </span>
                 <span class="actions">
-                            <button class="button buy-button">Куплено</button>
-                            <button class=" button dismiss-button">&#10006</button>
+                            <button class="button buy-button" data-tooltip="Відмітити як куплений">Куплено</button>
+                            <button class="button dismiss-button" data-tooltip="Скасувати">&#10006</button>
                     </span>
             </div>
             <div class="product">
@@ -46,13 +46,13 @@
                         Сир
                     </span>
                 <span class="quantity-modifiers">
-                        <button class="button minus-button">-</button>
+                        <button class="button minus-button" data-tooltip="Зменшити к-сть">-</button>
                         <span class="quantity">1</span>
-                        <button class="button plus-button">+</button>
+                        <button class="button plus-button" data-tooltip="Збільшити к-сть">+</button>
                     </span>
                 <span class="actions">
-                            <button class="button buy-button">Куплено</button>
-                            <button class="button dismiss-button">&#10006</button>
+                            <button class="button buy-button" data-tooltip="Відмітити як куплений">Куплено</button>
+                            <button class="button dismiss-button" data-tooltip="Скасувати">&#10006</button>
                     </span>
             </div>
         </div>
@@ -92,6 +92,11 @@
         </div>
         <div id="bought-products-list" class="status-column-list">
         </div>
+    </div>
+    <div id="info-badge">
+        <h2 id="title">Buy List</h2>
+        <span id="created-by">Created by:</span>
+        <p id="author">Nikolay Bikchentaev</p>
     </div>
 </div>
 </body>

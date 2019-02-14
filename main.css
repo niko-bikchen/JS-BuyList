@@ -1,15 +1,68 @@
 body {
     margin: 5%;
     width: 90%;
-    height: 300px;
+    height: 100%;
     font-family: Lato, "Helvetica Neue", Arial, Helvetica, sans-serif;
     font-size: 14px;
     line-height: 1.4em;
     background-color: #DADADA;
 }
 
+@media print {
+    #products-column #input-row #add-button{
+        font-size: 0.8em;
+    }
+
+    #info-badge {
+        background: #FFFFFF;
+        border: thin solid #6510bc;
+    }
+
+    #info-badge #title {
+        display: none;
+    }
+
+    #info-badge #title:after {
+        content: "Nikolay Bikchentaev";
+    }
+
+    #info-badge #created-by{
+        visibility: hidden;
+    }
+}
+
+@media (max-width: 800px) {
+    #products-column{
+        float: none;!important;
+        position: relative!important;
+        display: inline-block!important;
+        width: 100%!important;
+        margin: 5px!important;
+    }
+
+    #products-column .product {
+        padding: 12px!important;
+    }
+
+    #status-column {
+        float: none!important;
+        position: relative!important;
+        display: inline-block!important;
+        width: 100%!important;
+        height: 50%!important;
+        margin: 5px!important;
+        padding-right: 14px!important;
+    }
+
+    html {
+        margin-right: 25px!important;
+        align-items: center!important;
+    }
+}
+
 #main-container {
     height: 100%;
+    min-width: 480px;
 }
 
 .column {
@@ -18,6 +71,7 @@ body {
 }
 
 .button {
+    position: relative;
     text-align: center;
     color: #FFF;
     font-weight: 800;
@@ -25,6 +79,57 @@ body {
     border-radius: 5px;
     text-shadow: none;
     box-shadow: 0 -0.3em 0 0 rgba(34, 36, 38, .15) inset;
+}
+
+.button:after {
+    position: absolute;
+    z-index: 1;
+    visibility: hidden;
+    width: 100px;
+    height: 0;
+    font-size: 0;
+    font-weight: initial;
+    line-height: 1em;
+    content: attr(data-tooltip);
+    color: #FFF;
+    border-radius: 10px;
+    background-color: #6510bc;
+    transition: all 0.3s ease-in-out;
+}
+
+#products-column .plus-button:after {
+    bottom: 110%;
+    right: -170%;
+}
+
+#products-column .minus-button:after {
+    bottom: 110%;
+    right: -160%;
+}
+
+#products-column #add-button:after {
+    width: 220px;
+    bottom: 110%;
+    right: -45%;
+}
+
+#products-column .buy-button:after {
+    width: 150px;
+    bottom: 110%;
+    right: -55%;
+}
+
+#products-column .dismiss-button:after {
+    width: 70px;
+    bottom: 110%;
+    right: -100%;
+}
+
+.button:hover:after{
+    visibility: visible;
+    height: 10px;
+    padding: 10px;
+    font-size: 12px;
 }
 
 /* CSS rules for the column where remained and bought products will be displayed */
@@ -42,10 +147,13 @@ body {
 }
 
 .status-column-list {
-    padding: 4% 0px 3% 1%;
+    padding: 4% 0 3% 1%;
     text-align: left;
     font-size: 0.64285714rem;
-    border-bottom: 1px solid rgba(34, 36, 38, .15);
+}
+
+#status-column #bought {
+    border-top: 1px solid rgba(34, 36, 38, .15);
 }
 
 #status-column .product {
@@ -86,20 +194,19 @@ body {
 
 #products-column #input-row #input-field {
     padding: .67861429em 1em;
-    width: 80%;
-    border-radius: 5px 0 0 5px;
+    width: 77%;
+    border-radius: 5px;
     border: 1px solid rgba(34, 36, 38, .15);
 }
 
 #products-column #input-row #add-button {
     padding: .67861429em 1em;
-    margin: 0 0 0 -1%;
     width: 15%;
-    height: 36px;
+    height: 16%;
+    text-align: center;
+    font-size: 1em;
     font-weight: 700;
     background-color: #2185D0;
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
 }
 
 #products-column #product-list .product {
@@ -112,7 +219,7 @@ body {
 #products-column #product-list .prod-name {
     float: left;
     width: 105px;
-    padding: 8px 0px 5px 5px;
+    padding: 8px 0 5px 5px;
     text-align: left;
 }
 
@@ -164,4 +271,37 @@ body {
     font-size: .71428571rem;
     background-color: #DB2828;
     box-shadow: 0 0 0 1px rgba(34, 36, 38, .15) inset, 0 -0.3em 0 0 rgba(34, 36, 38, .15) inset;
+}
+
+/* CSS rules for the badge */
+
+#info-badge {
+    position: fixed;
+    top: 94%;
+    left: 5%;
+    padding: 5px;
+    width: 150px;
+    color: #FFFFFF;
+    text-align: center;
+    border-radius: 10px 10px;
+    background-color: #6510bc;
+    transition: all 1s ease;
+}
+
+#info-badge #title {
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+
+#info-badge #author {
+    margin-top: 5px;
+    padding-bottom: 10px;
+    font-size: 1em;
+    font-weight: 700;
+}
+
+#info-badge:hover {
+    background-color: #ff1a06;
+    transition: all 1s ease;
+    top: 86%;
 }
