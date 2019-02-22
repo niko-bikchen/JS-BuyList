@@ -277,7 +277,7 @@ body {
 
 #info-badge {
     position: fixed;
-    top: 94%;
+    bottom: -50px;
     left: 5%;
     padding: 5px;
     width: 150px;
@@ -301,7 +301,7 @@ body {
 }
 
 #info-badge:hover {
+    bottom: -20px;
     background-color: #ff1a06;
     transition: all 1s ease;
-    top: 86%;
 }
