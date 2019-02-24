@@ -152,6 +152,10 @@ body {
     font-size: 0.64285714rem;
 }
 
+#status-column #sl-product-template{
+    display: none;
+}
+
 #status-column #bought {
     border-top: 1px solid rgba(34, 36, 38, .15);
 }
@@ -207,6 +211,10 @@ body {
     font-size: 1em;
     font-weight: 700;
     background-color: #2185D0;
+}
+
+#products-column #product-list #product-template{
+    display: none;
 }
 
 #products-column #product-list .product {
