@@ -1,3 +1,5 @@
+var counter = 1;
+
 $(function () {
 
     initBuyList();
@@ -140,12 +142,12 @@ function addProduct(product_name) {
     $("#input-field").val("");
 
     $product.find(".prod-name").text(product_name);
-    $product.find(".prod-name").attr("id", "product-" + product_name);
-    $product.find(".buy-button").attr("id", "product-" + product_name);
+    $product.find(".prod-name").attr("id", "product-" + counter);
+    $product.find(".buy-button").attr("id", "product-" + counter);
     $product.find(".buy-button").attr("clicked", "false");
-    $product.find(".dismiss-button").attr("id", "dismiss-product-" + product_name);
-    $product.find(".plus-button").attr("id", "add-product-" + product_name);
-    $product.find(".minus-button").attr("id", "reduce-product-" + product_name);
+    $product.find(".dismiss-button").attr("id", "dismiss-product-" + counter);
+    $product.find(".plus-button").attr("id", "add-product-" + counter);
+    $product.find(".minus-button").attr("id", "reduce-product-" + counter);
 
     $product.removeAttr("id");
     $product.attr("class", "product");
@@ -159,8 +161,10 @@ function addProduct_SL(product_name){
     var $sl_product_template = $("#status-column").find("#sl-product-template").clone();
 
     $sl_product_template.find(".name").text(product_name);
-    $sl_product_template.attr("id", "status-product-" + product_name);
+    $sl_product_template.attr("id", "status-product-" + counter);
     $sl_product_template.attr("class", "product");
 
     $("#remained-products-list").append($sl_product_template);
+
+    counter++;
 }
