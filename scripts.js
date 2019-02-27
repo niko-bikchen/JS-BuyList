@@ -95,26 +95,28 @@ $(function () {
 
     $prod_list.on("click", "div.product .prod-name", function (e) {
         var $label = $("span#" + e.target.id);
-        var $label_clicked = $label.clone();
+        if($("button#" + e.target.id).attr("clicked").localeCompare("false") == 0) {
+            var $label_clicked = $label.clone();
 
-        var content = $label_clicked.text() + "";
+            var content = $label_clicked.text() + "";
 
-        var hidden_input = "<input type='text' id='hidden' value=" +
-            "'" + content + "'" + " placeholder='Нова назва' style='float: left; width: 105px; font-size: 0.8em'>";
+            var hidden_input = "<input type='text' id='hidden' value=" +
+                "'" + content + "'" + " placeholder='Нова назва' style='float: left; width: 105px; font-size: 0.8em'>";
 
-        $label.replaceWith(hidden_input);
+            $label.replaceWith(hidden_input);
 
-        var $hidden = $("#hidden");
-        $hidden.focus();
+            var $hidden = $("#hidden");
+            $hidden.focus();
 
-        $hidden.on("blur", function (e) {
-            $hidden.replaceWith($label_clicked.text($hidden.val()));
-        });
+            $hidden.on("blur", function (e) {
+                $hidden.replaceWith($label_clicked.text($hidden.val()));
+            });
 
-        $hidden.keyup(function () {
-            $remained_prod_list.find("#status-" + $label_clicked.attr("id")).find(".name").text($hidden.val());
-        });
-    })
+            $hidden.keyup(function () {
+                $remained_prod_list.find("#status-" + $label_clicked.attr("id")).find(".name").text($hidden.val());
+            });
+        }
+    });
 });
 
 function moveToRemained(prod_id) {
