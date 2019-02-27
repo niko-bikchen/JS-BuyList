@@ -40,6 +40,7 @@ $(function () {
             $button_clicked.text("Не куплено");
             $button_clicked.css("width", "70%");
             $button_clicked.attr("clicked", "true");
+            $button_clicked.attr("data-tooltip", "Відмітити як не куплений");
         } else {
             $("span#" + e.target.id).css("text-decoration", "none");
 
@@ -52,6 +53,7 @@ $(function () {
             $button_clicked.text("Куплено");
             $button_clicked.css("width", "initial");
             $button_clicked.attr("clicked", "false");
+            $button_clicked.attr("data-tooltip", "Відмітити як куплений");
         }
     });
 
