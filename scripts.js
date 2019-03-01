@@ -22,7 +22,7 @@ $(function () {
             }
             return false;
         }
-    })
+    });
 
     $prod_list.on("click", "div.product .buy-button", function (e) {
         var $button_clicked = $("button#" + e.target.id);
@@ -74,7 +74,7 @@ $(function () {
 
         var id = $container.find(".prod-name").attr("id");
         $remained_prod_list.find("#status-" + id).find(".quantity").text(quantity);
-    })
+    });
 
     $prod_list.on("click", "div.product .minus-button", function (e) {
         var $button_clicked = $("button#" + e.target.id);
